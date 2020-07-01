@@ -14,6 +14,18 @@ namespace Instrumentation
 	typedef std::chrono::time_point<_CLOCK > _TIMEPOINT;
 	typedef std::chrono::milliseconds _MILLIS;
 
+	/*
+	@brief: elapsed timer - get the time elapsed since an event in seconds
+	*/
+	class ElapsedTimer
+	{
+		public:
+					ElapsedTimer() { Reset(); }
+		float		GetElapsed();
+		void		Reset();
+	protected:
+		_TIMEPOINT  event_time_;
+	};
 
 	/*
 	@brief: A countdown of a given number of seconds

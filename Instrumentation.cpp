@@ -2,6 +2,14 @@
 
 namespace Instrumentation
 {
+	void ElapsedTimer::Reset() { event_time_ = _CLOCK::now(); };
+
+	float ElapsedTimer::GetElapsedSeconds()
+	{
+		return (float)(std::chrono::duration_cast<std::chrono::seconds>(_CLOCK::now() - event_time_).count());
+	}
+
+
 	// Countdown constructor
 	Countdown::Countdown(int inSeconds) : start_time_(_CLOCK::now()) { span_ = inSeconds * 1000; }
 
