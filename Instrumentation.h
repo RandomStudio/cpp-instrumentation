@@ -21,7 +21,7 @@ namespace Instrumentation
 	{
 		public:
 					ElapsedTimer() { Reset(); }
-		float		GetElapsed();
+		float		GetElapsedSeconds();
 		void		Reset();
 	protected:
 		_TIMEPOINT  event_time_;
